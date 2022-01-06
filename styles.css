@@ -1,6 +1,14 @@
 
-html{
+*{
+    margin: 0;
+    padding:0;
     box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+html{
     font-size: 62.5%;
 }
 body{
@@ -14,6 +22,7 @@ body{
     height: 100vh;
     background: url(https://images.unsplash.com/photo-1487147264018-f937fba0c817?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80) no-repeat;
     background-size: cover;
+    position: relative;
 }
 
 .banner{
@@ -28,17 +37,64 @@ body{
 .banner-header{
     margin-bottom: 4rem;
     height: 20rem;
+    perspective: 50rem;
+    overflow: hidden;
 }
 
 .banner-header span{
     font-size: 10rem;
-    height: 20rem;
     font-weight: 900;
     text-transform: uppercase;
     color:midnightblue;
     width: 100%;
     display: flex;
     justify-content: center;
+    position: absolute;
+    
 }
+
+@keyframes animateHeading{
+    0%{
+      transform: translateZ(8rem);
+      opacity: 0;
+      letter-spacing: 3rem;
+    }
+  
+    3%{
+      transform: translateZ(0);
+      opacity: 1;
+      letter-spacing: 1.5rem;
+    }
+  
+    25%{
+      transform: translateZ(0);
+      opacity: 1;
+      letter-spacing: 1.5rem;
+    }
+    28%{
+      transform: translateZ(8rem);
+      opacity: 0;
+      letter-spacing: 3rem;
+    }
+    100%{
+      transform: translateZ(8rem);
+      opacity: 0;
+      letter-spacing: 3rem;
+    }
+  }
+
+  .heading-1{
+    animation: animateHeading 12s 3s infinite;
+  }
+  
+  .heading-2{
+    animation: animateHeading 12s 6s infinite;
+  }
+  .heading-3{
+    animation: animateHeading 12s 9s infinite;
+  }
+  .heading-4{
+    animation: animateHeading 12s 12s infinite;
+  }
 
 
